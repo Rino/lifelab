@@ -1,4 +1,3 @@
-let power;
 let canvas;
 let sandbox;
 
@@ -34,9 +33,9 @@ window.addEventListener("load", function () {
     ctx.fillRect(0, 0, 800, 800);
 
     sandbox = new Sandbox(100, 100);
-    sandbox.spawn_cell(50, 50);
-    sandbox.spawn_cell(60, 60);
-    sandbox.spawn_cell(51, 51);
+    sandbox.spawn_cell(50, 50, { color: 'green', breed_factor: 100});
+    sandbox.spawn_cell(60, 60, { color: 'blue', breed_factor: 10});
+    sandbox.spawn_cell(40, 60, { color: 'red', breed_factor: 50});
 
     // console.log(safe_coord(101, 100));
 

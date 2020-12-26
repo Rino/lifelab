@@ -37,8 +37,8 @@ class Sandbox {
     }
 
 
-    spawn_cell(x, y) {
-        this.field[x][y] = new Cell(x, y);
+    spawn_cell(x, y, genome) {
+        this.field[x][y] = new Cell(x, y, genome);
     }
 
     get_free_space(x, y) {
