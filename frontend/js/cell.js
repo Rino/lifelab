@@ -11,15 +11,15 @@ class Cell {
         ctx.fillRect(this.x * cell_size, this.y * cell_size, cell_size, cell_size);
     }
 
-    breed(env) {
-        let free_spaces = env.get_free_space(this.x, this.y)
+    breed(sandbox) {
+        let free_spaces = sandbox.get_free_space(this.x, this.y)
         if(free_spaces.length > 0){
             let place = free_spaces[getRandomInt(free_spaces.length)]
-            env.spawn_cell(place[0], place[1])
+            sandbox.spawn_cell(place[0], place[1])
         }
     }
 
-    update(env) {
+    update(sandbox) {
         if (this.rise)
             this.power++;
         else
@@ -31,7 +31,7 @@ class Cell {
         }
 
         if (this.power > 150) {
-            if(getRandomInt(80) == 1) this.breed(env)
+            if(getRandomInt(80) == 1) this.breed(sandbox)
         }
 
 

@@ -1,6 +1,6 @@
 let power;
 let canvas;
-let cell_env;
+let sandbox;
 
 
 function getRandomInt(max) {
@@ -9,8 +9,8 @@ function getRandomInt(max) {
 
 function animation_step(timestamp) {
 
-    cell_env.update();
-    cell_env.show(ctx, 8);
+    sandbox.update();
+    sandbox.show(ctx, 8);
     window.requestAnimationFrame(animation_step);
 }
 
@@ -33,10 +33,10 @@ window.addEventListener("load", function () {
     ctx.fillStyle = "black";
     ctx.fillRect(0, 0, 800, 800);
 
-    cell_env = new Environment(100, 100);
-    cell_env.spawn_cell(50, 50);
-    cell_env.spawn_cell(60, 60);
-    cell_env.spawn_cell(51, 51);
+    sandbox = new Sandbox(100, 100);
+    sandbox.spawn_cell(50, 50);
+    sandbox.spawn_cell(60, 60);
+    sandbox.spawn_cell(51, 51);
 
     // console.log(safe_coord(101, 100));
 

@@ -1,4 +1,4 @@
-class Environment {
+class Sandbox {
     constructor(width, height) {
         this.width = width;
         this.height = height;
