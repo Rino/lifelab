@@ -12,6 +12,10 @@ class Sandbox {
         }
     }
 
+    is_free(x, y){
+        return (this.field[x][y] == null)
+    }
+
     for_each_cell(task) {
         for (let i = 0; i < this.width; i++) {
             for (let j = 0; j < this.height; j++) {
