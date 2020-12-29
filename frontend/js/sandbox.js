@@ -12,7 +12,7 @@ class Sandbox {
         }
     }
 
-    is_free(x, y){
+    is_free(x, y) {
         return (this.field[x][y] == null)
     }
 
@@ -84,7 +84,7 @@ class Sandbox {
         return free_space
     }
 
-    safe_coord(coord, number) {
+    static safe_coord(coord, number) {
         coord = coord % number
         if (coord < 0) return number + coord
         if (coord >= number) return coord - number
@@ -92,11 +92,13 @@ class Sandbox {
     }
 
     safe_x(x) {
-        return this.safe_coord(x, this.width)
+        return safe_coord(x, this.width)
     }
 
     safe_y(y) {
-        return this.safe_coord(y, this.height)
+        return safe_coord(y, this.height)
     }
 
 }
+
+module.exports = Sandbox;

@@ -34,8 +34,8 @@ window.addEventListener("load", function () {
 
     sandbox = new Sandbox(100, 100);
     //sandbox.spawn_cell(50, 50, { color: 'green', breed_factor: 100, breed_direction: 1});
-    // sandbox.spawn_cell(60, 60, { color: 'blue', breed_factor: 10, breed_schema: 2});
-    // sandbox.spawn_cell(40, 60, { color: 'red', breed_factor: 10, breed_schema: 2});
+    sandbox.spawn_cell(60, 60, { color: 'blue', breed_factor: 10, breed_schema: 2});
+    //sandbox.spawn_cell(40, 60, { color: 'red', breed_factor: 10, breed_schema: 2});
 
     //sandbox.spawn_cell(60, 60, { color: 'green', breed_factor: 10, breed_schema: 3, breed_direction: [-1, -1], mutation_period: 10});
 
