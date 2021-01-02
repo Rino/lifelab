@@ -1,4 +1,4 @@
-class Sandbox {
+class Sandbox2DBL {
     constructor(width, height) {
         this.width = width;
         this.height = height;
@@ -101,4 +101,3 @@ class Sandbox {
 
 }
 
-module.exports = Sandbox;
