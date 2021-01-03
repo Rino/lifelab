@@ -8,7 +8,7 @@ class Space2D {
         for (let y = 0; y < this.height; y++) {
             let row = []
             for (let x = 0; x < this.width; x++) {
-                row.push(new Socket(this,[x, y]))
+                row.push(new Socket(this, [x, y]))
             }
             this.space.push(row)
         }
@@ -58,19 +58,34 @@ class Space2D {
         this.for_each_socket(function (socket, x, y) {
             if (!socket.is_empty()) {
                 let cell = socket.cell
-                ctx.fillStyle = 'rgb(' + cell.power + ',0,0)'
+                ctx.fillStyle = cell2color(cell.type, cell.power)
                 ctx.fillRect(x * cell_size, y * cell_size, cell_size, cell_size);
             }
         })
     }
 
 
-    set_cell(cell, x, y) {
-        let env = this.space[x][y]
-        env.cell = cell
-        cell.env = env
-    }
-
 }
+
+function  cell2color(cell_type, cell_power) {
+    switch (cell_type) {
+        case 1:
+            return 'rgb(' + cell_power + ',0,0)'
+        case 2:
+            return 'rgb(0,' + cell_power + ',0)'
+        case 3:
+            return 'rgb(0,0,' + cell_power + ')'
+        case 4:
+            return 'rgb(' + cell_power + ',' + cell_power + ',0)'
+        case 5:
+            return 'rgb(' + cell_power + ',0,' + cell_power + ')'
+        case 6:
+            return 'rgb(0,' + cell_power +', '+ cell_power + ')'
+        case 7:
+            return 'rgb('+ cell_power +',' + cell_power +', '+ cell_power + ')'
+
+    }
+}
+
 
 module.exports = Space2D

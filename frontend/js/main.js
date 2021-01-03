@@ -5,14 +5,11 @@ let canvas;
 let space;
 
 
-function getRandomInt(max) {
-    return Math.floor(Math.random() * Math.floor(max));
-}
 
 function animation_step(timestamp) {
 
     space.update();
-    space.show(ctx, 32);
+    space.show(ctx, 8);
     window.requestAnimationFrame(animation_step);
 }
 
@@ -29,18 +26,14 @@ window.addEventListener("load", function () {
     ctx.fillStyle = "black";
     ctx.fillRect(0, 0, 800, 800);
 
-    space = new Space2D(25, 25)
-    space.connect_cell(new Cell1(0), 12, 12)
-    // space.set_cell(new Cells.Cell1(0), 12, 12)
-
-    //sandbox.set_cell(new Cell(50, 50, { color: 'green', breed_factor: 10, breed_direction: 1}))
-    // sandbox.spawn_cell(50, 50, { color: 'green', breed_factor: 100, breed_direction: 1});
-    // #sandbox.spawn_cell(60, 60, { color: 'blue', breed_factor: 10, breed_schema: 2});
-    //sandbox.spawn_cell(40, 60, { color: 'red', breed_factor: 10, breed_schema: 2});
-
-    //sandbox.spawn_cell(60, 60, { color: 'green', breed_factor: 10, breed_schema: 3, breed_direction: [-1, -1], mutation_period: 10});
-
-    // console.log(safe_coord(101, 100));
+    space = new Space2D(100, 100)
+    space.connect_cell(new Cell1(1), 50, 50)
+    space.connect_cell(new Cell1(2), 51, 50)
+    space.connect_cell(new Cell1(3), 52, 50)
+    space.connect_cell(new Cell1(4), 50, 51)
+    space.connect_cell(new Cell1(5), 51, 51)
+    space.connect_cell(new Cell1(6), 52, 51)
+    space.connect_cell(new Cell1(7), 51, 52)
 
 
     window.requestAnimationFrame(animation_step);
