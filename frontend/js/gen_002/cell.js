@@ -1,15 +1,7 @@
-class Cell {
+class Cell1 {
 
     constructor(type) {
         this.type = type
-    }
-
-}
-
-class Cell1 extends  Cell{
-
-    constructor(type) {
-        super(type)
         this.rise = true
         this.power = 1
     }
@@ -48,8 +40,7 @@ class Cell1 extends  Cell{
 }
 
 
-//
-// module.exports = {
-//     Cell,
-//     Cell1
-// }
+
+module.exports = {
+    Cell1
+}

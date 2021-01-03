@@ -92,6 +92,6 @@ class Space2D {
 
 }
 
-// module.exports = {
-//     Space2D
-// }
+module.exports = {
+    Space2D
+}

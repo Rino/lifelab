@@ -1,5 +1,5 @@
-const Space2D = require('./gen_003/space_2d');
-const Cell1 = require('./gen_003/cell1');
+const Spaces = require('./space');
+const Cells = require('./cell');
 
 let canvas;
 let space;
@@ -29,9 +29,8 @@ window.addEventListener("load", function () {
     ctx.fillStyle = "black";
     ctx.fillRect(0, 0, 800, 800);
 
-    space = new Space2D(25, 25)
-    space.connect_cell(new Cell1(0), 12, 12)
-    // space.set_cell(new Cells.Cell1(0), 12, 12)
+    space = new Spaces.Space2D(25, 25)
+    space.set_cell(new Cells.Cell1(0), 12, 12)
 
     //sandbox.set_cell(new Cell(50, 50, { color: 'green', breed_factor: 10, breed_direction: 1}))
     // sandbox.spawn_cell(50, 50, { color: 'green', breed_factor: 100, breed_direction: 1});
